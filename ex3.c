@@ -69,7 +69,7 @@ int isSelectedValidBrand() {
 void printBrandsWithNoData(int userSelectedBrand[], int size) {
     printf("No data for brands");
     for (int brandIdx = 0; brandIdx < size; brandIdx++) {
-        if (userSelectedBrand[brandIdx] == -1) {
+        if (!userSelectedBrand[brandIdx]) {
             printf(" %s", brands[brandIdx]);
         }
     }
@@ -165,6 +165,7 @@ void printDailyStats() {
 }
 
 void printAllData() {
+    printf("*****************************************\n");
     for (int brandIdx = 0; brandIdx < NUM_OF_BRANDS; brandIdx++) {
         printf("Sales for %s:\n", brands[brandIdx]);
         for (int dayIdx = 0; dayIdx < currentDayIdx; dayIdx++) {
@@ -178,6 +179,7 @@ void printAllData() {
             printf("\n");
         }
     }
+    printf("*****************************************\n");
 }
 
 void printOverAll() {
